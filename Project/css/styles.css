@@ -1,0 +1,254 @@
+:root {
+  --DarkGrayishBlue: hsl(217, 19%, 35%);
+  --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+  --GrayishBlue: hsl(212, 23%, 69%);
+  --LightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+.flex {
+  display: flex;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-size: 13px;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  height: 100%;
+  /* weight: 500, 700 */
+  background-color: var(--LightGrayishBlue);
+  display: flex;
+  align-items: center;
+}
+
+#wrapper {
+  max-width: 715px;
+  width: 80%;
+  margin-inline: auto;
+  border-radius: 10px;
+  box-shadow: 5px 15px 45px hsla(217, 19%, 35%, 0.1);
+}
+
+#big-img {
+  width: 100%;
+  background-image: url(../images/drawers.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#content {
+  padding: 1.8rem 3rem 2.1rem 2.2rem;
+  background-color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#main-header {
+  font-size: 1.3rem;
+  color: var(--DarkGrayishBlue);
+}
+
+#main-paragraph {
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--DesaturatedDarkBlue);
+}
+
+#profile-container {
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#profile-img {
+  width: 37px;
+  height: 37px;
+  border-radius: 360px;
+}
+
+#description {
+  align-items: center;
+  gap: 1rem;
+}
+
+#description h2 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--DarkGrayishBlue);
+}
+
+#description p {
+  color: var(--GrayishBlue);
+}
+
+
+.shareBtn-container {
+  position: relative;
+}
+
+.shareBtn-container.small-screen {
+  display: none;
+}
+
+.share-button {
+  padding: 0.4rem;
+  background-color: var(--LightGrayishBlue);
+  border-radius: 360px;
+  border-color: transparent;
+  transition: scale 0.1s;
+}
+
+.share-button:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.share-button.actived {
+  background-color: var(--DesaturatedDarkBlue);
+}
+
+.share-button.actived svg path {
+  fill: white;
+}
+
+.dropup {
+  visibility: hidden;
+  background-color: var(--DarkGrayishBlue);
+  box-shadow: 5px 15px 45px hsla(217, 19%, 35%, 0.1);
+  gap: 1rem;
+  user-select: none;
+}
+
+.dropup p {
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--GrayishBlue);
+}
+
+#dropup {
+  width: 230px;
+  padding-block: 1rem;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -80px;
+  left: -100px;
+}
+
+#dropup.actived {
+  visibility: visible;
+}
+
+#dropup-small.actived {
+  visibility: hidden;
+}
+
+#dropup-small {
+  position: absolute;
+}
+
+.social-media-list {
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-media-list li {
+  transition: scale 0.1s;
+}
+
+.social-media-list .twitter-icon {
+  padding-top: 1px;
+  padding-left: 4px;
+}
+
+.social-media-list li:hover {
+  scale: 1.15;
+  cursor: pointer;
+}
+
+.arrow-down {
+  position: absolute;
+  transform: translate(0, 27px);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+
+  border-top: 20px solid var(--DarkGrayishBlue);
+}
+
+@media (max-width: 769px) {
+  #wrapper {
+    position: relative;
+    width: 90%;
+    box-shadow: 0 0 45px hsla(217, 19%, 35%, 0.1);
+    flex-direction: column;
+  }
+
+  #big-img {
+    height: 220px;
+    border-radius: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  #content {
+    padding: 2.5rem 1.9rem 1.2rem 1.9rem;
+    border-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  #main-header {
+    font-size: 1rem;
+  }
+
+  #main-paragraph {
+    font-size: 0.9rem;
+  }
+
+  #dropup.actived {
+    visibility: hidden;
+  }
+
+
+  .shareBtn-container.small-screen.actived {
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .shareBtn-container.small-screen #dropup-small {
+    visibility: visible;
+  }
+
+  .shareBtn-container.small-screen .share-button {
+    position: absolute;
+    top: 17px;
+    right: 30px;
+  }
+
+  #dropup-small {
+    position: static;
+    padding-block: 1.5rem;
+    padding-left: 2rem;
+    border-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    justify-content: flex-start;
+  }
+
+  .arrow-down {
+    visibility: hidden;
+  }
+}
